@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<style>
+    body{
+        background: none;
+    }
+    img{
+        display: block;
+    }
+    @media screen and (max-width: 480px) {
+        .img1{
+            width: 100%;
+        }
+    }
+    p{
+        font-size: 20px;
+    }
+</style>
+<body>
+    <div class="body">
+        <h1>Confusion Matrix Calculation</h1>
+        <a href="index.html"><h3><i class="fas fa-home"></i> Home</h3></a>
+        <img src="img/p.PNG" alt="">
+        <img src="img/r.PNG" alt="">
+        <img src="img/f.PNG" alt="">
+        <img src="img/cm1.PNG" alt="" class="img1">
+        <img src="img/cm2.PNG" alt="" class="img1"><br><br>
+        <p>Note*: Enter all field</p>
+    
+        <input type="number" id="cmInput" name="inp" placeholder="True Positive">
+        <input type="number" id="cmInput" name="inp" placeholder="True Negative">
+        <input type="number" id="cmInput" name="inp" placeholder="False Positive">
+        <input type="number" id="cmInput" name="inp" placeholder="False Negative">
+        <br>
+        <button onclick="confusionMatrix()" id="avg_btn"><i class="fas fa-check-circle"></i> Calculate</button>
+    
+        <br><br>
+        <h4 class="errorMsg"></h4>
+        <table id="Table">
+            <tbody>
+                <tr>
+                    <td>Precision</td>
+                    <td id="output1"></td>
+                </tr>
+                <tr>
+                    <td>Recall</td>
+                    <td id="output2"></td>
+                </tr>
+                <tr>
+                    <td>F1-score</td>
+                    <td id="output3"></td>
+                </tr>
+                <tr>
+                    <td>Classification accuracy</td>
+                    <td id="output4"></td>
+                </tr>
+            </tbody>
+        </table>
+        <b><p id="title"></p></b>
+        <p id="value"></p>
+        <p id="precision"></p>
+        <p id="recall"></p>
+        <p id="f1"></p>
+        <p id="accuracy"></p>
+        
+
+    </div>
+
+</body>
+
+<script src="java script.js"></script>
+
+</html>

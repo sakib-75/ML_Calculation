@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+    <div class="body">
+        <h1>Calculate New Weight</h1>
+        <a href="index.html"><h3><i class="fas fa-home"></i> Home</h3></a>
+        <h3>w[new] ← w[old] + α × errorDelta(D, w[j])</h3>
+       
+        <input type="number" id="oldw" placeholder="Old w[ ]"><br><br>
+        <input type="number" id="learning" placeholder="Learning Rate"><br><br>
+        <input type="number" id="errorDelta" placeholder="Error Delta">
+        <button onclick="getWeight()" id="avg_btn"><i class="fas fa-check-circle"></i> Calculate</button>
+        <br><br>
+
+        <h4 class="errorMsg"></h4>
+        <p id="weight"></p>
+
+    </div>
+
+</body>
+
+<script src="java script.js"></script>
+
+</html>

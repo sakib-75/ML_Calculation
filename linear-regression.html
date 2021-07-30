@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+    <div class="body">
+        <h1>Multivariate Linear Regression with Gradient Descent</h1>
+        <a href="index.html"><h3><i class="fas fa-home"></i> Home</h3></a>
+        <a href="weight.html"><h3><i class="fas fa-arrow-circle-right"></i> Calculate New Weight</h3></a><br>
+        <img src="img/prediction_law.PNG" alt=""><br><br>
+
+        <input type="number" id="dfAmount" placeholder="Descriptive feature">
+        <button onclick="createInput()" id="add_btn"><i class="fas fa-plus-circle"></i> Add Input</button>
+        <button onclick="calculate()" id="avg_btn"><i class="fas fa-check-circle"></i> Calculate</button>
+        <br><br>
+        <div id="parent"> </div>
+        <div id="parent2"> </div>
+        <input type="number" id="target" placeholder="Target features">
+        <h4 class="errorMsg"></h4>
+        <br><br>
+        <table id="Table">
+            <tbody>
+                <tr>
+                    <td>Target Feature</td>
+                    <td id="output1"></td>
+                </tr>
+                <tr>
+                    <td>Prediction</td>
+                    <td id="output2"></td>
+                </tr>
+                <tr>
+                    <td>Error</td>
+                    <td id="output3"></td>
+                </tr>
+                <tr>
+                    <td>Squared Error</td>
+                    <td id="output4"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="par"> </div>
+        <p id="title"></p>
+        <p id="prTitle"></p>
+        <div id="prDetails"> </div>
+        <p id="pr" style="font-size: 18px;"></p>
+
+        <p id="edTitle"></p>
+        <div id="edDetails"> </div>
+
+    </div>
+
+</body>
+<style>
+    #title{
+        color: red;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    #edTitle, #prTitle{
+        font-weight: bold;
+    }
+</style>
+<script src="java script.js"></script>
+
+</html>
