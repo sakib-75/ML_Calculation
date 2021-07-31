@@ -173,10 +173,10 @@ function confusionMatrix(){
         accuracy = (TP+TN)/total;
     
         visibleTable();
-        document.querySelector("#output1").innerHTML = precision;
-        document.querySelector("#output2").innerHTML = recall;
-        document.querySelector("#output3").innerHTML = f1Score;
-        document.querySelector("#output4").innerHTML = accuracy;
+        document.querySelector("#output1").innerHTML = precision.toFixed(2);
+        document.querySelector("#output2").innerHTML = recall.toFixed(2);
+        document.querySelector("#output3").innerHTML = f1Score.toFixed(2);
+        document.querySelector("#output4").innerHTML = accuracy.toFixed(2);
         document.querySelector(".errorMsg").innerHTML = "";
 
         //Details Calculation
