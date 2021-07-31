@@ -16,15 +16,17 @@
         <h1>Multivariate Linear Regression with Gradient Descent</h1>
         <a href="index.html"><h3><i class="fas fa-home"></i> Home</h3></a>
         <a href="weight.html"><h3><i class="fas fa-arrow-circle-right"></i> Calculate New Weight</h3></a><br>
-        <img src="img/prediction_law.PNG" alt=""><br><br>
+        <img src="img/prediction_law.PNG" alt="">
 
-        <input type="number" id="dfAmount" placeholder="Descriptive feature">
+        <p style="color: red;">Note*: Enter the amount of descriptive feature</p>
+        <input type="number" id="dfAmount" placeholder="Descriptive Feature">
         <button onclick="createInput()" id="add_btn"><i class="fas fa-plus-circle"></i> Add Input</button>
-        <button onclick="calculate()" id="avg_btn"><i class="fas fa-check-circle"></i> Calculate</button>
+        <button onclick="LinearRegression()" id="avg_btn"><i class="fas fa-check-circle"></i> Calculate</button>
         <br><br>
         <div id="parent"> </div>
         <div id="parent2"> </div>
-        <input type="number" id="target" placeholder="Target features">
+        <div id="target_par"></div>
+
         <h4 class="errorMsg"></h4>
         <br><br>
         <table id="Table">
@@ -68,7 +70,7 @@
     #edTitle, #prTitle{
         font-weight: bold;
     }
-     @media screen and (max-width: 480px) {
+    @media screen and (max-width: 480px) {
         img{
             width: 100%;
         }
