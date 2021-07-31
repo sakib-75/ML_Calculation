@@ -63,11 +63,9 @@ function createInput() {
 
 function LinearRegression() {
     var n = document.getElementById("dfAmount").value; //input amount
-    var targetF = Number(document.getElementById("target").value); //input amount
-    
     if (n>0) {
-
         var prediction, w=[], d=[], sum=0, prod, _error, sq_error, _w=[], value, i;
+        var targetF = Number(document.getElementById("target").value); //target amount
 
         for (i = 0; i <= n; i++) {
            
