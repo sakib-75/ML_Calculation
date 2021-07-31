@@ -1,8 +1,7 @@
 function createInput() {
     var el = document.getElementById("dfAmount").value; //Descriptive features amount
-    
     if (el == '' || el < 0 ) {
-        document.querySelector(".errorMsg").innerHTML = "Enter the amount of Descriptive features first!";
+        document.querySelector(".errorMsg").innerHTML = "Enter the amount of descriptive features for input!";
     } else {
         var n = el && parseInt(el, 10);
         if (isNaN(n)) {
@@ -15,8 +14,9 @@ function createInput() {
         var prDetails = document.getElementById("prDetails");
         var edDetails = document.getElementById("edDetails");
         var target_par = document.getElementById("target_par");
-
+        
         // Create w input
+        cleanDiv(parent);
         for (i = 0; i <= n; i++) {
             input = document.createElement('input');
             input.setAttribute('type', 'number');
@@ -36,17 +36,19 @@ function createInput() {
             input = document.createElement("P");
             input.setAttribute('id', 'ed_p'+i);
             edDetails.appendChild(input);
-
         }
+
         //Create target feature input
+        cleanDiv(target_par);
         input = document.createElement('input');
         input.setAttribute('type', 'number');
         input.setAttribute('class', 'input_box');
         input.setAttribute('placeholder', 'Target Feature');
         input.setAttribute('id', 'target');
         target_par.appendChild(input);
-        
-       // Create d input
+
+        // Create d input
+        cleanDiv(parent2);
         for (i = 1; i <= n; i++) {
             input = document.createElement('input');
             input.setAttribute('type', 'number');
@@ -55,9 +57,7 @@ function createInput() {
             input.setAttribute('id', 'd'+i);
             parent2.appendChild(input);
         }
-
         document.querySelector(".errorMsg").innerHTML = '';
-
     }
 }
 
@@ -65,10 +65,9 @@ function LinearRegression() {
     var n = Number(document.getElementById("dfAmount").value); //input amount
     if (n>0) {
         var prediction, w=[], d=[], sum=0, prod, _error, sq_error, _w=[], value, i;
-        var targetF = Number(document.getElementById("target").value); //target amount
-
+        var targetF = Number(document.getElementById("target").value); //target feature
+   
         for (i = 0; i <= n; i++) {
-           
             d[0]=1; 
             w[i] = Number(document.getElementById('w'+i).value);
             if(i < n){
@@ -81,8 +80,8 @@ function LinearRegression() {
             var detailsPR;
             detailsPR = "w["+i+"]&#215;d["+i+"]= " + w[i] +"&#215;"+ d[i] +" => "+ prod;
             document.getElementById("pr_p"+i).innerHTML = detailsPR;
-           
         }
+
         prediction = sum;
         _error = targetF - prediction;
         sq_error = _error * _error;
@@ -98,7 +97,6 @@ function LinearRegression() {
             var detailsED;
             detailsED = "w["+i+"] = "+_error+"&#215;"+d[i]+" => "+ _w[i];
             document.getElementById("ed_p"+i).innerHTML = detailsED;
-           
         }
         
         visibleTable();
@@ -128,7 +126,7 @@ function LinearRegression() {
         document.querySelector(".errorMsg").innerHTML = '';
         
     } else {
-        document.querySelector(".errorMsg").innerHTML = "Enter the amount of Descriptive features! ";
+        document.querySelector(".errorMsg").innerHTML = "Enter the amount of descriptive features for calculation! ";
     }
 }
 
@@ -159,14 +157,11 @@ function confusionMatrix(){
         document.querySelector(".errorMsg").innerHTML = "Enter all field";
     }
     else{
-       
         precision = TP/(TP+FP);
         recall= TP/(TP+FN);
-    
         rp1 = precision*recall;
         rp2 = precision+recall;
         f1Score = (2*rp1)/rp2;
-    
         total = TP+TN+FP+FN;
         accuracy = (TP+TN)/total;
     
@@ -209,4 +204,8 @@ function visibleTable(){
     for (i = 0; i < y.length; i++) {
         y[i].style.border = "1px solid #dddddd";
     } 
+}
+
+function cleanDiv(div) {
+    div.innerHTML = '';
 }
