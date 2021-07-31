@@ -14,14 +14,14 @@ function createInput() {
         var par = document.getElementById("par");
         var prDetails = document.getElementById("prDetails");
         var edDetails = document.getElementById("edDetails");
+        var target_par = document.getElementById("target_par");
 
-        cleanDiv(parent);
         // Create w input
         for (i = 0; i <= n; i++) {
             input = document.createElement('input');
             input.setAttribute('type', 'number');
             input.setAttribute('class', 'input_box');
-            input.setAttribute('placeholder', 'Value of W ' + i);
+            input.setAttribute('placeholder', 'Value of [w'+i+']');
             input.setAttribute('id', 'w'+i);
             parent.appendChild(input);
 
@@ -38,14 +38,20 @@ function createInput() {
             edDetails.appendChild(input);
 
         }
+        //Create target feature input
+        input = document.createElement('input');
+        input.setAttribute('type', 'number');
+        input.setAttribute('class', 'input_box');
+        input.setAttribute('placeholder', 'Target Feature');
+        input.setAttribute('id', 'target');
+        target_par.appendChild(input);
         
-        cleanDiv(parent2);
-        // Create d input
+       // Create d input
         for (i = 1; i <= n; i++) {
             input = document.createElement('input');
             input.setAttribute('type', 'number');
             input.setAttribute('class', 'input_box');
-            input.setAttribute('placeholder', 'Value of d ' + i);
+            input.setAttribute('placeholder', 'Value of [d'+i+']');
             input.setAttribute('id', 'd'+i);
             parent2.appendChild(input);
         }
@@ -53,10 +59,9 @@ function createInput() {
         document.querySelector(".errorMsg").innerHTML = '';
 
     }
-  
 }
 
-function calculate() {
+function LinearRegression() {
     var n = document.getElementById("dfAmount").value; //input amount
     var targetF = Number(document.getElementById("target").value); //input amount
     
@@ -196,10 +201,6 @@ function confusionMatrix(){
         document.querySelector("#accuracy").innerHTML = dtl_accuracy;
         
     }
-}
-
-function cleanDiv(div) {
-    div.innerHTML = '';
 }
 
 function visibleTable(){
