@@ -199,11 +199,8 @@ function confusionMatrix(){
 function visibleTable(){
     //Visible table
     var x = document.querySelector("#Table");
-    x.style.visibility = "visible";
-    var y = document.getElementsByTagName("td");
-    for (i = 0; i < y.length; i++) {
-        y[i].style.border = "1px solid #dddddd";
-    } 
+    x.style.display = "block";
+   
 }
 
 function cleanDiv(div) {
