@@ -84,12 +84,12 @@ body{
     width: 50%;
     margin-top: 20px;
     border-collapse: collapse;
-    visibility: hidden;
+    display: none;
     clear: both;
 }
 
 td {
-    border: none;
+    border: 1px solid #dddddd;
     padding: 7px 10px;
     width: 50%;
     font-size: 18px;
