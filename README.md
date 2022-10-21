@@ -5,5 +5,6 @@ By using the value of descriptive feature (d[1,2,3...n]), target feature and ini
 <li>Calculate performance evaluation (Accuracy, Precision, Recall, F1-Score) using confusion matrix </li>
 
 
-<a href="https://ml-calculation-sakib.netlify.app/"> <h2> Click here to visit the site </h2> </a>
+
+### [Click here to visit the site](https://ml-calculation-sakib.netlify.app)
 
